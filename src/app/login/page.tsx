@@ -30,6 +30,8 @@ export default function Login() {
         try {
             setLoading(true);
            const response =  await axios.post("api/users/login",user)
+           //const tokenResponse = await axios.get("api/user/details");
+           //console.log(tokenResponse)
            const {data} = response.data
            if(data.isAdmin) {
             router.push('/adminProfile')
