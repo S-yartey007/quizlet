@@ -4,7 +4,7 @@ import {connect} from "@/dbConfig/dbConfig"
 connect(process.env.MONGO_USER_URI!)
 
 
-export default async function GET(request: NextRequest) {
+export  async function GET(request: NextRequest) {
     const reqBody = await request.json();
     const {email,password} = reqBody
     console.log(reqBody)
