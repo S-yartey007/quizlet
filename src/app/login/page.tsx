@@ -1,5 +1,5 @@
 'use client';
-
+import { lusitana } from '../ui/fonts';
 import Link from 'next/link';
 import React,{useEffect} from "react";
 import { useRouter } from 'next/navigation';
@@ -48,12 +48,16 @@ export default function Login() {
 
     }
     return (
-        <div className='p-2 flex flex-col items-center justify-center min-h-screen py-2 gap-2'>
-            <h1>{loading ? "Signing in": "Signed In"}</h1>
+        <div className='p-2 rounded-lg bg-gray-50 px-6 pb-4 pt-8 flex flex-col items-center justify-center min-h-screen py-2 gap-2'>
+            <h1>{loading ? "Signing in": "Sign In"}</h1>
             <hr/>
+            <h1 className={`${lusitana.className} mb-3 text-2xl`}>
+          Please log in to continue.
+        </h1>
           
-            <label htmlFor='email'>email</label>
-            <input className='p-2 rounded '
+            <label className="mb-3 mt-5 block text-xs font-medium text-gray-900" htmlFor='email'>email</label>
+            <input className="peer block w-1/2 rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+
             id='email'
             type='text'
             value={user.email}
@@ -62,8 +66,9 @@ export default function Login() {
             }}
             placeholder='emailpassword'
             />
-            <label htmlFor='password'>password</label>
-            <input className='p-2 rounded'
+            <label  className="mb-3 mt-5 block text-xs font-medium text-gray-900" htmlFor='password'>password</label>
+            <input className="peer block w-1/2 rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+
             id='password'
             type='password'
             value={user.password}
